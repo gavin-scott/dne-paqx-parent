@@ -230,7 +230,10 @@ public class FindProtectionDomainTaskHandler extends BaseTaskHandler implements 
         String type = null;
         for (Host host : hosts)
         {
-            if (scaleIOSDS.getName().contains(host.getName()))
+            String[] split_scaleio_name = scaleIOSDS.getName().split("-");
+            String scaleIoName = split_scaleio_name[0] +"-"+ split_scaleio_name[1];
+            String hostName =host.getName();
+            if (scaleIoName.equals(hostName))
             {
                 type = host.getType();
             }
