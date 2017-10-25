@@ -293,6 +293,6 @@ public class NodeExpansionRequest
                 + '\'' + ", symphonyUuid='" + symphonyUuid + '\'' + ", vMotionManagementIpAddress='" + vMotionManagementIpAddress + '\''
                 + ", vMotionManagementSubnetMask='" + vMotionManagementSubnetMask + '\'' + ", protectionDomainName='" + protectionDomainName
                 + '\'' + ", protectionDomainId='" + protectionDomainId + '\'' + ", deviceToDeviceStoragePool='" + deviceToDeviceStoragePool
-                == null ? null : deviceToDeviceStoragePool.toString() + '\'' + '}';
+                + '\'' + '}';
     }
 }
