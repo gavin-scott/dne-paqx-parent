@@ -150,6 +150,7 @@ public class NodeExpansionController
     public ResponseEntity<NodeExpansionResponse> preProcessOrchestration(@RequestBody NodeExpansionRequest params,
                                                                          HttpServletRequest servletRequest) throws InterruptedException, ExecutionException
     {
+        LOGGER.info("Input request: " + params.toString());
         String uuid = params.getSymphonyUuid();
 
         if ( uuid == null || uuid.isEmpty()) {
@@ -175,6 +176,7 @@ public class NodeExpansionController
                                                                         HttpServletRequest servletRequest) throws InterruptedException, ExecutionException, WorkflowNotFoundException {
         Job job = preProcessService.createWorkflow("preprocess", stepName,
                 "Preprocess request has been Submitted successfully");
+        LOGGER.info("Input request: " + params.toString());
 
         if ( job == null ) {
             String errMsg = "Can not find the workflow with step name " + stepName;
@@ -203,6 +205,7 @@ public class NodeExpansionController
     {
         Job job = addNodeService.createWorkflow("addNode", "startAddNodeWorkflow",
                 "AddNode request has been Submitted successfully");
+        LOGGER.info("Input request: " + params.toString());
         job.setInputParams(params);
         orchestrationService.orchestrateWorkflow(job, addNodeService );
 

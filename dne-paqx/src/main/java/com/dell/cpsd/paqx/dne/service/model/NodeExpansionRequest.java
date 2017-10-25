@@ -292,6 +292,7 @@ public class NodeExpansionRequest
                 + '\'' + ", scaleIoSvmManagementSubnetMask='" + scaleIoSvmManagementSubnetMask + '\'' + ", clusterName='" + clusterName
                 + '\'' + ", symphonyUuid='" + symphonyUuid + '\'' + ", vMotionManagementIpAddress='" + vMotionManagementIpAddress + '\''
                 + ", vMotionManagementSubnetMask='" + vMotionManagementSubnetMask + '\'' + ", protectionDomainName='" + protectionDomainName
-                + '\'' + ", protectionDomainId='" + protectionDomainId + '\'' + '}';
+                + '\'' + ", protectionDomainId='" + protectionDomainId + '\'' + ", deviceToDeviceStoragePool='" + deviceToDeviceStoragePool
+                == null ? null : deviceToDeviceStoragePool.toString() + '\'' + '}';
     }
 }

@@ -35,6 +35,6 @@ public class NodeInventoryParsingUtilTest {
     public void testParseNewDevices()  {
         List<Device> newDevices = NodeInventoryParsingUtil.parseNewDevices(jsonString);
         Assert.assertNotNull(newDevices);
-        Assert.assertEquals(20,newDevices.size());
+        Assert.assertEquals(21,newDevices.size());
     }
 }

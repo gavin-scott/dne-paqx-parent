@@ -8845,6 +8845,541 @@
       "controller_PCI_BDF": "0000:00:1f.2",
       "host_ID": "10"
     }
+  },  {
+    "OS Device Name": "/dev/sdd scsi",
+    "smartctl Version": "6.2",
+    "SMART": {
+      "Identity": {
+        "Device Model": "SSDSC2BB480G7R",
+        "Serial Number": "PHDV645600R7480BGN",
+        "LU WWN Device Id": "5 5cd2e4 14d52c042",
+        "Add_ Product Id": "DELL(tm)",
+        "Firmware Version": "N201DL41",
+        "User Capacity": "480,103,981,056 bytes [480 GB]",
+        "Sector Sizes": "512 bytes logical, 4096 bytes physical",
+        "Rotation Rate": "Solid State Device",
+        "Device is": "Not in smartctl database [for details use: -P showall]",
+        "ATA Version is": "ACS-3 (unknown minor revision code: 0x006d)",
+        "SATA Version is": "SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)",
+        "Local Time is": "Mon Oct 23 12:11:57 2017 UTC",
+        "SMART support is": [
+          "Available - device has SMART capability.",
+          "Enabled"
+        ]
+      },
+      "Self-Assessment": {
+        "SMART overall-health self-assessment test result": "PASSED"
+      },
+      "Capabilities": [
+        {
+          "Name": "Offline data collection status",
+          "Value": "0x02",
+          "Annotation": [
+            "Offline data collection activity was completed without error",
+            "Auto Offline Data Collection: Disabled"
+          ]
+        },
+        {
+          "Name": "Self-test execution status",
+          "Value": "0",
+          "Annotation": [
+            "The previous self-test routine completed without error or no self-test has ever been run"
+          ]
+        },
+        {
+          "Name": "Total time to complete Offline  data collection",
+          "Value": "2",
+          "Annotation": [
+            "seconds"
+          ]
+        },
+        {
+          "Name": "Offline data collection capabilities",
+          "Value": "0x79",
+          "Annotation": [
+            "SMART execute Offline immediate",
+            "No Auto Offline data collection support",
+            "Suspend Offline collection upon new command",
+            "Offline surface scan supported",
+            "Self-test supported",
+            "Conveyance Self-test supported",
+            "Selective Self-test supported"
+          ]
+        },
+        {
+          "Name": "SMART capabilities",
+          "Value": "0x0003",
+          "Annotation": [
+            "Saves SMART data before entering power-saving mode",
+            "Supports SMART auto save timer"
+          ]
+        },
+        {
+          "Name": "Error logging capability",
+          "Value": "0x01",
+          "Annotation": [
+            "Error logging supported",
+            "General Purpose Logging supported"
+          ]
+        },
+        {
+          "Name": "Short self-test routine  recommended polling time",
+          "Value": "1",
+          "Annotation": [
+            "minutes"
+          ]
+        },
+        {
+          "Name": "Extended self-test routine recommended polling time",
+          "Value": "60",
+          "Annotation": [
+            "minutes"
+          ]
+        },
+        {
+          "Name": "Conveyance self-test routine recommended polling time",
+          "Value": "60",
+          "Annotation": [
+            "minutes"
+          ]
+        },
+        {
+          "Name": "SCT capabilities",
+          "Value": "0x003d",
+          "Annotation": [
+            "SCT Status supported",
+            "SCT Error Recovery Control supported",
+            "SCT Feature Control supported",
+            "SCT Data Table supported"
+          ]
+        }
+      ],
+      "Attributes": {
+        "Revision": "1",
+        "Attributes Table": [
+          {
+            "ID#": "1",
+            "ATTRIBUTE_NAME": "Raw_Read_Error_Rate",
+            "FLAG": "0x000e",
+            "VALUE": "130",
+            "WORST": "130",
+            "THRESH": "039",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "3695"
+          },
+          {
+            "ID#": "5",
+            "ATTRIBUTE_NAME": "Reallocated_Sector_Ct",
+            "FLAG": "0x0033",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "001",
+            "TYPE": "Pre-fail",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "9",
+            "ATTRIBUTE_NAME": "Power_On_Hours",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "4866"
+          },
+          {
+            "ID#": "12",
+            "ATTRIBUTE_NAME": "Power_Cycle_Count",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "71"
+          },
+          {
+            "ID#": "13",
+            "ATTRIBUTE_NAME": "Read_Soft_Error_Rate",
+            "FLAG": "0x001e",
+            "VALUE": "130",
+            "WORST": "130",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "3695"
+          },
+          {
+            "ID#": "170",
+            "ATTRIBUTE_NAME": "Unknown_Attribute",
+            "FLAG": "0x0033",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "010",
+            "TYPE": "Pre-fail",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "174",
+            "ATTRIBUTE_NAME": "Unknown_Attribute",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "65"
+          },
+          {
+            "ID#": "179",
+            "ATTRIBUTE_NAME": "Used_Rsvd_Blk_Cnt_Tot",
+            "FLAG": "0x0033",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "010",
+            "TYPE": "Pre-fail",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "180",
+            "ATTRIBUTE_NAME": "Unused_Rsvd_Blk_Cnt_Tot",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "10256"
+          },
+          {
+            "ID#": "181",
+            "ATTRIBUTE_NAME": "Program_Fail_Cnt_Total",
+            "FLAG": "0x003a",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "182",
+            "ATTRIBUTE_NAME": "Erase_Fail_Count_Total",
+            "FLAG": "0x003a",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "184",
+            "ATTRIBUTE_NAME": "End-to-End_Error",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "194",
+            "ATTRIBUTE_NAME": "Temperature_Celsius",
+            "FLAG": "0x0022",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "18"
+          },
+          {
+            "ID#": "195",
+            "ATTRIBUTE_NAME": "Hardware_ECC_Recovered",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "197",
+            "ATTRIBUTE_NAME": "Current_Pending_Sector",
+            "FLAG": "0x0012",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "198",
+            "ATTRIBUTE_NAME": "Offline_Uncorrectable",
+            "FLAG": "0x0010",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Offline",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "199",
+            "ATTRIBUTE_NAME": "UDMA_CRC_Error_Count",
+            "FLAG": "0x003e",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "201",
+            "ATTRIBUTE_NAME": "Unknown_SSD_Attribute",
+            "FLAG": "0x0033",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "010",
+            "TYPE": "Pre-fail",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "433792235914"
+          },
+          {
+            "ID#": "202",
+            "ATTRIBUTE_NAME": "Unknown_SSD_Attribute",
+            "FLAG": "0x0027",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Pre-fail",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "225",
+            "ATTRIBUTE_NAME": "Unknown_SSD_Attribute",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "226",
+            "ATTRIBUTE_NAME": "Unknown_SSD_Attribute",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "102400"
+          },
+          {
+            "ID#": "227",
+            "ATTRIBUTE_NAME": "Unknown_SSD_Attribute",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "228",
+            "ATTRIBUTE_NAME": "Power-off_Retract_Count",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "3809358821"
+          },
+          {
+            "ID#": "232",
+            "ATTRIBUTE_NAME": "Available_Reservd_Space",
+            "FLAG": "0x0033",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "010",
+            "TYPE": "Pre-fail",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "233",
+            "ATTRIBUTE_NAME": "Media_Wearout_Indicator",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "234",
+            "ATTRIBUTE_NAME": "Unknown_Attribute",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "241",
+            "ATTRIBUTE_NAME": "Total_LBAs_Written",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "0"
+          },
+          {
+            "ID#": "242",
+            "ATTRIBUTE_NAME": "Total_LBAs_Read",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "17102"
+          },
+          {
+            "ID#": "245",
+            "ATTRIBUTE_NAME": "Unknown_Attribute",
+            "FLAG": "0x0032",
+            "VALUE": "100",
+            "WORST": "100",
+            "THRESH": "000",
+            "TYPE": "Old_age",
+            "UPDATED": "Always",
+            "WHEN_FAILED": "-",
+            "RAW_VALUE": "100"
+          }
+        ]
+      },
+      "Error Log": {
+        "Revision": "1",
+        "Error Log Table": []
+      },
+      "Self-test Log": {
+        "Revision": "1",
+        "Self-test Log Table": [
+          {
+            "Num": "# 1",
+            "Test_Description": "Short offline",
+            "Status": "Completed without error",
+            "Remaining": "00%",
+            "LifeTime(hours)": "2",
+            "LBA_of_first_error": "-"
+          },
+          {
+            "Num": "# 2",
+            "Test_Description": "Extended offline",
+            "Status": "Completed without error",
+            "Remaining": "00%",
+            "LifeTime(hours)": "2",
+            "LBA_of_first_error": "-"
+          }
+        ]
+      },
+      "Selective Self-test Log": {
+        "Revision": "1",
+        "Selective Self-test Log Table": [
+          {
+            "SPAN": "1",
+            "MIN_LBA": "0",
+            "MAX_LBA": "0",
+            "CURRENT_TEST_STATUS": "Not_testing"
+          },
+          {
+            "SPAN": "2",
+            "MIN_LBA": "0",
+            "MAX_LBA": "0",
+            "CURRENT_TEST_STATUS": "Not_testing"
+          },
+          {
+            "SPAN": "3",
+            "MIN_LBA": "0",
+            "MAX_LBA": "0",
+            "CURRENT_TEST_STATUS": "Not_testing"
+          },
+          {
+            "SPAN": "4",
+            "MIN_LBA": "0",
+            "MAX_LBA": "0",
+            "CURRENT_TEST_STATUS": "Not_testing"
+          },
+          {
+            "SPAN": "5",
+            "MIN_LBA": "0",
+            "MAX_LBA": "0",
+            "CURRENT_TEST_STATUS": "Not_testing"
+          }
+        ],
+        "Selective self-test flags": {
+          "Value": "0x0",
+          "Annotation": [
+            "After scanning selected spans, do NOT read-scan remainder of disk.",
+            "If Selective self-test is pending on power-up, resume after 0 minute delay."
+          ]
+        }
+      }
+    },
+    "Controller": {
+      "controller_name": "LSI Logic / Symbios Logic SAS3008 PCI-Express Fusion-MPT SAS-3 (rev 02)",
+      "controller_PCI_BDF": "0000:02:00.0",
+      "host_ID": "11"
+    }
   }, {
     "OS Device Name": "/dev/sdb scsi",
     "smartctl Version": "6.2",

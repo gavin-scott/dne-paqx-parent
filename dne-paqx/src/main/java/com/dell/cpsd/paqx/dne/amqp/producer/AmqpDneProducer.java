@@ -241,7 +241,7 @@ public class AmqpDneProducer implements DneProducer
 
         if (endpointHelper != null)
         {
-            LOGGER.info("Publish Add Host to ProtectionDomain request from DNE paqx.");
+            LOGGER.info("Publish Add Host to ProtectionDomain request from DNE paqx. " + request);
             rabbitTemplate.convertAndSend(endpointHelper.getRequestExchange(), endpointHelper.getRequestRoutingKey(), request);
         }
     }
