@@ -73,6 +73,7 @@ public class NodeInventoryParsingUtil
             String ssdDeviceType;
             String serialNumber;
             String devicePath = null;
+            String capacity;
             for (int iCount = 0; iCount < length; iCount++)
             {
                 source = context.read("$[" + iCount + "]['source']", String.class);
@@ -94,6 +95,10 @@ public class NodeInventoryParsingUtil
                                 serialNumber = context
                                         .read("$[" + iCount + "]['data'][" + iDataCount + "]['smart']['identity']['serial number']",
                                                 String.class);
+                                capacity = context
+                                        .read("$[" + iCount + "]['data'][" + iDataCount + "]['smart']['identity']['user capacity']",
+                                                String.class);
+                                capacity = capacity == null ? null : capacity.split("bytes")[0].replaceAll(",","").trim();
 
                                 if (deviceName != null)
                                 {
@@ -127,7 +132,7 @@ public class NodeInventoryParsingUtil
                                 if (deviceId != null)
                                 {
                                     Device newDevice = new Device(deviceId, deviceName, null, serialNumber, null, devicePath,
-                                            Device.Type.SSD);
+                                            Device.Type.SSD, capacity);
                                     newDevices.add(newDevice);
                                 }
                             }
