@@ -88,7 +88,7 @@ public class AddHostToProtectionDomainTaskHandler extends BaseTaskHandler implem
              */
             List<SdsIp> sdsIpList = createSdsIps(job);
 
-            List<DeviceInfo> deviceInfoList = createDeviceAssignmentList(job);
+            List<DeviceInfo> deviceInfoList = createDeviceInfoList(job);
 
             final com.dell.cpsd.paqx.dne.service.model.ComponentEndpointIds componentEndpointIds = repository.getComponentEndpointIds("SCALEIO-CLUSTER");
 
@@ -197,15 +197,19 @@ public class AddHostToProtectionDomainTaskHandler extends BaseTaskHandler implem
         return sdsIpList;
     }
 
-    private List<DeviceInfo> createDeviceAssignmentList(Job job) {
+    private List<DeviceInfo> createDeviceInfoList(Job job) {
 
         List<DeviceInfo> returnVal=null;
         Map<String, DeviceAssignment> deviceToDeviceStoragePoolAssignment = job.getInputParams().getDeviceToDeviceStoragePool();
 
         if (deviceToDeviceStoragePoolAssignment != null)
         {
+            //spaces are NOT allowed in the deviceName, so we will replace any spaces with '/'
+            // '/' is a valid character for deviceName
+            //the deviceName tends to look like "/dev/sda scsi" so it will change to "/dev/sda/scsi"
             returnVal = deviceToDeviceStoragePoolAssignment.values().stream().filter(Objects::nonNull)
-                    .map(ddspa -> new DeviceInfo(ddspa.getLogicalName(), ddspa.getStoragePoolId(), ddspa.getDeviceName())).collect(Collectors.toList());
+                    .filter(ddspa->!ddspa.getLogicalName().equals("/dev/sda"))
+                    .map(ddspa -> new DeviceInfo(ddspa.getLogicalName(), ddspa.getStoragePoolId(), ddspa.getDeviceName().replace(' ', '/'))).collect(Collectors.toList());
         }
         return returnVal;
     }

@@ -56,60 +56,60 @@ public class PreProcessService extends BaseService implements IPreProcessService
     @Bean("changeIdracCredentialsTask")
     private WorkflowTask changeIdracCredentialsTask()
     {
-        return createTask("Change Out of Band Management Credentials", new ChangeIdracCredentialsTaskHandler(this.nodeService));
+        return createTask("Change out of band management credentials", new ChangeIdracCredentialsTaskHandler(this.nodeService));
     }
 
     @Bean("configureObmSettingsTask")
     private WorkflowTask configureObmSettingsTask(){
-        return createTask("Configuring Obm Settings", new ConfigureObmSettingsTaskHandler(nodeService, obmServices));
+        return createTask("Configure out of band management settings", new ConfigureObmSettingsTaskHandler(nodeService, obmServices));
     }
 
     @Bean("configIdracTask")
     private WorkflowTask configIdracTask()
     {
-        return createTask("Configuring Out of Band Management", new ConfigIdracTaskHandler(nodeService));
+        return createTask("Configure server out of band IP address", new ConfigIdracTaskHandler(nodeService));
     }
 
     @Bean("pingIdracTask")
     private WorkflowTask pingIdracTask()
     {
-        return createTask("Ping Out of Band Management IP Address", new PingIdracTaskHandler(PING_IDRAC_TIMEOUT));
+        return createTask("Ping server out of band IP address", new PingIdracTaskHandler(PING_IDRAC_TIMEOUT));
     }
 
     @Bean("configureBootDeviceIdrac")
     private WorkflowTask configureBootDeviceIdrac()
     {
-        return createTask("Configure Boot Device Idrac", new ConfigureBootDeviceIdracTaskHandler(nodeService));
+        return createTask("Configure server boot device and boot sequence", new ConfigureBootDeviceIdracTaskHandler(nodeService));
     }
 
     @Bean("findVClusterTask")
     public WorkflowTask createVClusterTask()
     {
-        return createTask("Find VCluster", new FindVClusterTaskHandler(nodeService));
+        return createTask("Find vCenter cluster", new FindVClusterTaskHandler(nodeService));
     }
 
     @Bean("findOrCreateValidStoragePoolTask")
     public WorkflowTask findOrCreateValidStoragePoolTask()
     {
-        return createTask("Find or Create Valid Storage Pool", new FindOrCreateValidStoragePoolTaskHandler(nodeService));
+        return createTask("Find or create valid storage pool", new FindOrCreateValidStoragePoolTaskHandler(nodeService));
     }
 
     @Bean("findProtectionDomainTask")
     public WorkflowTask findProtectionDomainTask()
     {
-        return createTask("Find Protection Domain", new FindProtectionDomainTaskHandler(nodeService, repository));
+        return createTask("Find or create protection domain", new FindProtectionDomainTaskHandler(nodeService, repository));
     }
 
     @Bean("listScaleIoComponentsTask")
     private WorkflowTask listScaleIoComponentsTask()
     {
-        return createTask("List ScaleIO Components", new ListScaleIoComponentsTaskHandler(this.nodeService));
+        return createTask("List ScaleIO components", new ListScaleIoComponentsTaskHandler(this.nodeService));
     }
 
     @Bean("listVCenterComponentsTask")
     private WorkflowTask listVCenterComponentsTask()
     {
-        return createTask("List VCenter Components", new ListVCenterComponentsTaskHandler(this.nodeService));
+        return createTask("List vCenter components", new ListVCenterComponentsTaskHandler(this.nodeService));
     }
 
     @Bean("discoverScaleIoTask")
@@ -121,7 +121,7 @@ public class PreProcessService extends BaseService implements IPreProcessService
     @Bean("discoverVCenterTask")
     private WorkflowTask discoverVCenterTask()
     {
-        return createTask("Discover VCenter", new DiscoverVCenterTaskHandler(this.nodeService, repository));
+        return createTask("Discover vCenter", new DiscoverVCenterTaskHandler(this.nodeService, repository));
     }
 
     @Bean("preProcessWorkflowTasks")

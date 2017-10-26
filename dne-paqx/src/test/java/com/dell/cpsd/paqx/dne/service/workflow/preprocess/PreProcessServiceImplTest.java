@@ -12,11 +12,9 @@ import com.dell.cpsd.paqx.dne.domain.WorkflowTask;
 import com.dell.cpsd.paqx.dne.repository.InMemoryJobRepository;
 import com.dell.cpsd.paqx.dne.service.WorkflowServiceImpl;
 import com.dell.cpsd.paqx.dne.service.model.Step;
-import com.dell.cpsd.paqx.dne.service.workflow.preprocess.PreProcessService;
 
-import org.junit.Assert;
+
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -25,6 +23,7 @@ import java.util.Map;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 
 public class PreProcessServiceImplTest {
 
@@ -74,59 +73,75 @@ public class PreProcessServiceImplTest {
     @Test
     public void testPreProcessWorkFlowTask_setup()
     {
-        Assert.assertNotNull(workFlowTasks);
-        Assert.assertThat(workFlowTasks.size(), greaterThan(0));
+        assertNotNull(workFlowTasks);
+        assertThat(workFlowTasks.size(), greaterThan(0));
     }
 
     @Test
     public void testTaskName_configIdrac()
     {
-    	Assert.assertEquals("Configuring Out of Band Management", workFlowTasks.get("configIdrac").getTaskName());
+        assertEquals("Configure server out of band IP address", workFlowTasks.get("configIdrac").getTaskName());
     }
 
-  
+    @Test
+    public void testTaskName_listScaleIoComponents()
+    {
+        assertEquals("List ScaleIO components", workFlowTasks.get("listScaleIoComponents").getTaskName());
+    }
+
+    @Test
+    public void testTaskName_listVCenterComponentsTask()
+    {
+        assertEquals("List vCenter components", workFlowTasks.get("listVCenterComponents").getTaskName());
+    }
+
+    @Test
+    public void testTaskName_discoverScaleIo()
+    {
+        assertEquals("Discover ScaleIO", workFlowTasks.get("discoverScaleIo").getTaskName());
+    }
+
+    @Test
+    public void testTaskName_discoverVCenter()
+    {
+        assertEquals("Discover vCenter", workFlowTasks.get("discoverVCenter").getTaskName());
+    }
+
     @Test
     public void testTaskName_configureObmSettings()
     {
-        Assert.assertEquals("Configuring Obm Settings", workFlowTasks.get("configureObmSettings").getTaskName());
+        assertEquals("Configure out of band management settings", workFlowTasks.get("configureObmSettings").getTaskName());
+    }
+
+    @Test
+    public void testTaskName_pingIdrac()
+    {
+        assertEquals("Ping server out of band IP address", workFlowTasks.get("pingIdrac").getTaskName());
+    }
+
+    @Test
+    public void testTaskName_configureBootDeviceIdrac()
+    {
+        assertEquals("Configure server boot device and boot sequence", workFlowTasks.get("configureBootDeviceIdrac").getTaskName());
     }
 
     @Test
     public void testTaskName_findVCluster() {
-    	Assert.assertEquals("Find VCluster", workFlowTasks.get("findVCluster").getTaskName());
+        assertEquals("Find vCenter cluster", workFlowTasks.get("findVCluster").getTaskName());
     }
 
     @Test
-    public void testTaskName_findOrCreateValidStoragePool() {
-        Assert.assertEquals("Find or Create Valid Storage Pool", workFlowTasks.get("findOrCreateValidStoragePool").getTaskName());
+    public void testTaskName_findScaleIO() {
+        assertEquals("Find or create valid storage pool", workFlowTasks.get("findOrCreateValidStoragePool").getTaskName());
     }
 
-    @Ignore
     @Test
     public void testTaskName_findProtectionDomain() {
-    	Assert.assertEquals("Protection Domain", workFlowTasks.get("findProtectionDomain").getTaskName());
-    }
-
-    @Ignore
-    @Test
-    public void testTaskName_findSystemData() {
-    	Assert.assertEquals("Find SystemData", workFlowTasks.get("findSystemData").getTaskName());
-    }
-
-    @Ignore
-    @Test
-    public void testTaskName_assignDefaultHostName() {
-    	Assert.assertEquals("Assign Default HostName", workFlowTasks.get("assignDefaultHostName").getTaskName());
-    }
-
-    @Ignore
-    @Test
-    public void testTaskName_assignDefaultCredentials() {
-    	Assert.assertEquals("Assign Default Credentials", workFlowTasks.get("assignDefaultCredentials").getTaskName());
+        assertEquals("Find or create protection domain", workFlowTasks.get("findProtectionDomain").getTaskName());
     }
 
     @Test
     public void testTaskName_changeIdracCredentials() {
-        Assert.assertEquals("Change Out of Band Management Credentials", workFlowTasks.get("changeIdracCredentials").getTaskName());
+        assertEquals("Change out of band management credentials", workFlowTasks.get("changeIdracCredentials").getTaskName());
     }
 }

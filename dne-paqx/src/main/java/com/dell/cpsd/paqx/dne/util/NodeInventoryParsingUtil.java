@@ -72,7 +72,6 @@ public class NodeInventoryParsingUtil
             String deviceName;
             String ssdDeviceType;
             String serialNumber;
-            String devicePath = null;
             String capacity;
             for (int iCount = 0; iCount < length; iCount++)
             {
@@ -132,7 +131,7 @@ public class NodeInventoryParsingUtil
                                 if (deviceId != null)
                                 {
                                     Device newDevice = new Device(deviceId, deviceName, null, serialNumber, null, devicePath,
-                                            Device.Type.SSD, capacity);
+                                            Device.Type.SSD);
                                     newDevices.add(newDevice);
                                 }
                             }

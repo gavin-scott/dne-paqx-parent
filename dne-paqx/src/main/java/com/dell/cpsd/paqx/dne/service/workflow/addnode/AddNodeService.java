@@ -139,39 +139,39 @@ public class AddNodeService extends BaseService implements IAddNodeService
     @Bean("updateSdcPerformanceProfileTask")
     private WorkflowTask updateSdcPerformanceProfileTask()
     {
-        return createTask("Configure SDC profile for High Performance",
+        return createTask("Configure SDC profile for high performance",
                 new UpdateSdcPerformanceProfileTaskHandler(nodeService, repository, SDC_PERF_PROFILE_UPDATE_WAIT_TIME));
     }
 
     @Bean("performanceTuneSvmTask")
     private WorkflowTask performanceTuneSvmTask()
     {
-        return createTask("Performance Tune the ScaleIO VM", new PerformanceTuneSvmTaskHandler(nodeService, repository));
+        return createTask("Performance tune the ScaleIO VM", new PerformanceTuneSvmTaskHandler(nodeService, repository));
     }
 
     @Bean("addHostToProtectionDomain")
     private WorkflowTask addHostToProtectionDomainTask()
     {
-        return createTask("Add Host To Protection Domain", new AddHostToProtectionDomainTaskHandler(nodeService, repository));
+        return createTask("Add host to protection domain", new AddHostToProtectionDomainTaskHandler(nodeService, repository));
     }
 
     @Bean("installSvmPackagesTask")
     private WorkflowTask installSvmPackagesTask()
     {
-        return createTask("Install SDS and LIA Packages", new InstallSvmPackagesTaskHandler(nodeService, repository));
+        return createTask("Install SDS and Light Installation Agent (LIA) packages", new InstallSvmPackagesTaskHandler(nodeService, repository));
     }
 
     @Bean("changeSvmCredentialsTask")
     private WorkflowTask changeSvmCredentialsTask()
     {
-        return createTask("Change ScaleIO VM Credentials",
+        return createTask("Change ScaleIO VM credentials",
                 new ChangeSvmCredentialsTaskHandler(nodeService, repository, CHANGE_SVM_CREDENTIALS_WAIT_TIME, ESXI_HOST_PING_TIMEOUT));
     }
 
     @Bean("configureVmNetworkSettingsTask")
     private WorkflowTask configureVmNetworkSettingsTask()
     {
-        return createTask("Configure ScaleIO VM Network Settings", new ConfigureVmNetworkSettingsTaskHandler(nodeService, repository));
+        return createTask("Configure ScaleIO VM network settings", new ConfigureVmNetworkSettingsTaskHandler(nodeService, repository));
     }
 
     @Bean("powerOnSVMTask")
@@ -183,7 +183,7 @@ public class AddNodeService extends BaseService implements IAddNodeService
     @Bean("exitHostMaintenanceModeTask")
     private WorkflowTask exitHostMaintenanceModeTask()
     {
-        return createTask("Exit Host Maintenance Mode", new ExitHostMaintenanceModeTaskHandler(nodeService, repository));
+        return createTask("Exit host maintenance mode", new ExitHostMaintenanceModeTaskHandler(nodeService, repository));
     }
 
     @Bean("esxiCredentialDetailsTask")
@@ -201,7 +201,7 @@ public class AddNodeService extends BaseService implements IAddNodeService
     @Bean("configurePxeBootTask")
     private WorkflowTask configurePxeBootTask()
     {
-        return createTask("Configure Pxe boot", new ConfigurePxeBootTaskHandler(nodeService));
+        return createTask("Configure PXE boot", new ConfigurePxeBootTaskHandler(nodeService));
     }
 
     @Bean("installEsxiTask")
@@ -214,38 +214,38 @@ public class AddNodeService extends BaseService implements IAddNodeService
     @Bean("addHostToVcenterTask")
     private WorkflowTask addHostToVcenterTask()
     {
-        return createTask("Add Host to VCenter", new AddHostToVCenterTaskHandler(this.nodeService, repository));
+        return createTask("Add host to vCenter cluster", new AddHostToVCenterTaskHandler(this.nodeService, repository));
     }
 
     @Bean("installScaleIoVibTask")
     private WorkflowTask installScaleIoVibTask()
     {
-        return createTask("Install SDC VIB", new InstallScaleIoVibTaskHandler(this.nodeService, repository, sdcVibUrl));
+        return createTask("Install SDC vSphere Installation Bundle (VIB)", new InstallScaleIoVibTaskHandler(this.nodeService, repository, sdcVibUrl));
     }
 
     @Bean("configureScaleIoVibTask")
     private WorkflowTask configureScaleIoVibTask()
     {
-        return createTask("Configure SDC VIB", new ConfigureScaleIoVibTaskHandler(this.nodeService, repository));
+        return createTask("Configure SDC vSphere Installation Bundle (VIB)", new ConfigureScaleIoVibTaskHandler(this.nodeService, repository));
     }
 
     @Bean("addHostToDvSwitchTask")
     private WorkflowTask addHostToDvSwitchTask()
     {
-        return createTask("ESXi Host DVSwitch Configuration", new AddHostToDvSwitchTaskHandler(this.nodeService, repository));
+        return createTask("Add ESXi host to cluster DVSwitch", new AddHostToDvSwitchTaskHandler(this.nodeService, repository));
     }
 
     @Bean("deploySVMTask")
     private WorkflowTask deploySVMTask()
     {
-        return createTask("Clone and Deploy ScaleIO VM",
+        return createTask("Clone and deploy ScaleIO VM",
                 new DeployScaleIoVmTaskHandler(this.nodeService, repository, DEPLOY_SVM_WAIT_TIME));
     }
 
     @Bean("enablePciPassthroughHostTask")
     private WorkflowTask enablePciPassthroughHostTask()
     {
-        return createTask("Enable PCI Passthrough ESXi host", new EnablePciPassthroughTaskHandler(this.nodeService, repository));
+        return createTask("Enable PCI passthrough ESXi host", new EnablePciPassthroughTaskHandler(this.nodeService, repository));
     }
 
     @Bean("rebootHostTask")
@@ -257,25 +257,25 @@ public class AddNodeService extends BaseService implements IAddNodeService
     @Bean("setPciPassthroughSioVmTask")
     private WorkflowTask setPciPassthroughSioVmTask()
     {
-        return createTask("Configure PCI Passthrough ScaleIO VM", new UpdatePciPassThroughTaskHandler(this.nodeService, repository));
+        return createTask("Configure PCI passthrough ScaleIO VM", new UpdatePciPassThroughTaskHandler(this.nodeService, repository));
     }
 
     @Bean("applyEsxiLicenseTask")
     private WorkflowTask applyEsxiLicenseTask()
     {
-        return createTask("Apply ESXi License", new ApplyEsxiLicenseTaskHandler(this.nodeService, repository));
+        return createTask("Apply ESXi license", new ApplyEsxiLicenseTaskHandler(this.nodeService, repository));
     }
 
     @Bean("notifyNodeDiscoveryToUpdateStatusTask")
     private WorkflowTask notifyNodeDiscoveryToUpdateStatusTask()
     {
-        return createTask("Notify Node Discovery To Update Status", new NotifyNodeDiscoveryToUpdateStatusTaskHandler(this.nodeService));
+        return createTask("Notify node discovery to update status", new NotifyNodeDiscoveryToUpdateStatusTaskHandler(this.nodeService));
     }
 
     @Bean("datastoreRenameTask")
     private WorkflowTask datastoreRenameTask()
     {
-        return createTask("Datastore rename", new DatastoreRenameTaskHandler(this.nodeService, this.repository));
+        return createTask("Rename datastore", new DatastoreRenameTaskHandler(this.nodeService, this.repository));
     }
 
     @Bean("updateSoftwareAcceptanceTask")
@@ -287,7 +287,7 @@ public class AddNodeService extends BaseService implements IAddNodeService
     @Bean("enterHostMaintenanceModeTask")
     private WorkflowTask enterHostMaintenanceModeTask()
     {
-        return createTask("Enter Host Maintenance Mode", new EnterHostMaintenanceModeTaskHandler(nodeService, repository));
+        return createTask("Enter host maintenance mode", new EnterHostMaintenanceModeTaskHandler(nodeService, repository));
     }
 
     public Job findJob(UUID jobId)
