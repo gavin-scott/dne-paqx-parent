@@ -119,11 +119,11 @@ public class StoragePoolEssRequestTransformerTest
         try
         {
             Map<String, HostStorageDevice> actual = transformer.correlateScaleIOAndVcenterData(sds, hostToStorageDeviceMap);
-            fail("Expecting error but did not error.");
+            assertEquals(null, actual);
         }
         catch (NoSuchElementException ex)
         {
-            assertEquals("No value present", ex.getLocalizedMessage());
+            fail("Error when no correlation found between scale io sds and vcenter.");
         }
     }
 

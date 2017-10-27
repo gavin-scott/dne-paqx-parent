@@ -108,22 +108,25 @@ public class StoragePoolEssRequestTransformer
                 Map<String, HostStorageDevice> displayNameToSsdMap = correlateScaleIOAndVcenterData(scaleIODevice.getSds(),
                         hostToStorageDeviceMap);
 
-                // for the matching hosts in vCenter, extract the information like serialNumber, disk type
-                HostStorageDevice hostStorageDevice = displayNameToSsdMap.get(device.getName());
-                if (hostStorageDevice != null)
+                if (displayNameToSsdMap != null)
                 {
-                    device.setSerialNumber(hostStorageDevice.getSerialNumber());
-
-                    device.setId(
-                            hostStorageDevice.getCanonicalName() != null ? hostStorageDevice.getCanonicalName().split("\\.")[1] : null);
-
-                    if (hostStorageDevice.isSsd())
+                    // for the matching hosts in vCenter, extract the information like serialNumber, disk type
+                    HostStorageDevice hostStorageDevice = displayNameToSsdMap.get(device.getName());
+                    if (hostStorageDevice != null)
                     {
-                        device.setType(Device.Type.SSD);
-                        // if type = SSD already set on the pool, don't set it again
-                        if (StoragePool.Type.HDD.equals(storagePool.getType()))
+                        device.setSerialNumber(hostStorageDevice.getSerialNumber());
+
+                        device.setId(
+                                hostStorageDevice.getCanonicalName() != null ? hostStorageDevice.getCanonicalName().split("\\.")[1] : null);
+
+                        if (hostStorageDevice.isSsd())
                         {
-                            storagePool.setType(StoragePool.Type.SSD);
+                            device.setType(Device.Type.SSD);
+                            // if type = SSD already set on the pool, don't set it again
+                            if (StoragePool.Type.HDD.equals(storagePool.getType()))
+                            {
+                                storagePool.setType(StoragePool.Type.SSD);
+                            }
                         }
                     }
                 }
@@ -149,7 +152,7 @@ public class StoragePoolEssRequestTransformer
             Map<String, Map<String, HostStorageDevice>> hostToStorageDeviceMap)
     {
         return hostToStorageDeviceMap.entrySet().stream().filter(e -> scaleIOSDS.getName().contains(e.getKey())).map(Map.Entry::getValue)
-                .findFirst().get();
+                .findFirst().orElse(null);
     }
 
     /**
