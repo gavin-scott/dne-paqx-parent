@@ -100,9 +100,6 @@ public class StoragePoolEssRequestTransformer
                 {
                     continue;
                 }
-                Device device = new Device();
-                device.setName(scaleIODevice.getName());
-                device.setType(Device.Type.HDD);
 
                 // correlate the vCenter and scaleIO data
                 Map<String, HostStorageDevice> displayNameToSsdMap = correlateScaleIOAndVcenterData(scaleIODevice.getSds(),
@@ -110,6 +107,10 @@ public class StoragePoolEssRequestTransformer
 
                 if (displayNameToSsdMap != null)
                 {
+                    Device device = new Device();
+                    device.setName(scaleIODevice.getName());
+                    device.setType(Device.Type.HDD);
+
                     // for the matching hosts in vCenter, extract the information like serialNumber, disk type
                     HostStorageDevice hostStorageDevice = displayNameToSsdMap.get(device.getName());
                     if (hostStorageDevice != null)
@@ -129,9 +130,8 @@ public class StoragePoolEssRequestTransformer
                             }
                         }
                     }
+                    devices.add(device);
                 }
-
-                devices.add(device);
             }
         }
 
