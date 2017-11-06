@@ -63,9 +63,9 @@ public class AddHostToDvSwitch extends BaseWorkflowDelegate
         final String vMotionManagementIpAddress = nodeDetail.getvMotionManagementIpAddress();
         final String vMotionManagementSubnetMask = nodeDetail.getvMotionManagementSubnetMask();
         final String scaleIoData1SvmIpAddress = nodeDetail.getScaleIoData1SvmIpAddress();
-        final String scaleIoSvmData1SubnetMask = nodeDetail.getScaleIoSvmData1SubnetMask();
+        final String scaleIoData1SvmSubnetMask = nodeDetail.getScaleIoData1SvmSubnetMask();
         final String scaleIoData2SvmIpAddress = nodeDetail.getScaleIoData2SvmIpAddress();
-        final String scaleIoSvmData2SubnetMask = nodeDetail.getScaleIoSvmData2SubnetMask();
+        final String scaleIoData1EsxSubnetMask = nodeDetail.getScaleIoData1EsxSubnetMask();
 
         final Map<String, String> dvSwitchNames = repository.getDvSwitchNames();
         String[] switches = {DVSWITCH0_NAME, DVSWITCH1_NAME, DVSWITCH2_NAME};
@@ -115,7 +115,7 @@ public class AddHostToDvSwitch extends BaseWorkflowDelegate
         final List<PortGroupConfigList> portGroupConfigListDvSwitch1 = new ArrayList<>();
         portGroupConfigListDvSwitch1.add(
                 new PortGroupConfigList(dvPortGroupNames.get(DVPORT_GROUP_SIO_DATA1), scaleIoData1SvmIpAddress, null,
-                                        scaleIoSvmData1SubnetMask));
+                                        scaleIoData1SvmSubnetMask));
 
         dvSwitchConfig1.setPortGroupConfigList(portGroupConfigListDvSwitch1);
         dvSwitchConfig1.setSwitchName(dvSwitchNames.get(DVSWITCH1_NAME));
@@ -127,7 +127,7 @@ public class AddHostToDvSwitch extends BaseWorkflowDelegate
         final List<PortGroupConfigList> portGroupConfigListDvSwitch2 = new ArrayList<>();
         portGroupConfigListDvSwitch2.add(
                 new PortGroupConfigList(dvPortGroupNames.get(DVPORT_GROUP_SIO_DATA2), scaleIoData2SvmIpAddress, null,
-                                        scaleIoSvmData2SubnetMask));
+                                        scaleIoData1EsxSubnetMask));
 
         dvSwitchConfig2.setPortGroupConfigList(portGroupConfigListDvSwitch2);
         dvSwitchConfig2.setSwitchName(dvSwitchNames.get(DVSWITCH2_NAME));

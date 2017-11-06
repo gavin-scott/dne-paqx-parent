@@ -96,42 +96,42 @@ public class AddHostToDvSwitchTaskHandler extends BaseTaskHandler implements IWo
             }
 
             //VMotion Config
-            final String vMotionManagementIpAddress = inputParams.getvMotionManagementIpAddress();
+            final String vMotionManagementIpAddress = inputParams.getVMotionManagementIpAddress();
             if (StringUtils.isEmpty(vMotionManagementIpAddress))
             {
                 throw new IllegalStateException("VMotion Management IP Address is null or empty");
             }
 
-            final String vMotionManagementSubnetMask = inputParams.getvMotionManagementSubnetMask();
+            final String vMotionManagementSubnetMask = inputParams.getVMotionManagementSubnetMask();
             if (StringUtils.isEmpty(vMotionManagementSubnetMask))
             {
                 throw new IllegalStateException("VMotion Management Subnet Mask is null or empty");
             }
 
             //SIO DATA1 Port Config
-            final String scaleIoData1SvmIpAddress = inputParams.getScaleIoData1SvmIpAddress();
-            if (StringUtils.isEmpty(scaleIoData1SvmIpAddress))
+            final String scaleIoData1EsxIpAddress = inputParams.getScaleIoData1EsxIpAddress();
+            if (StringUtils.isEmpty(scaleIoData1EsxIpAddress))
             {
                 throw new IllegalStateException("ScaleIO Data1 IP Address is null or empty");
             }
 
-            final String scaleIoSvmData1SubnetMask = inputParams.getScaleIoSvmData1SubnetMask();
-            if (StringUtils.isEmpty(scaleIoSvmData1SubnetMask))
-            {
-                throw new IllegalStateException("ScaleIO Data1 Subnet Mask is null or empty");
-            }
-
             //SIO DATA2 Port Config
-            final String scaleIoData2SvmIpAddress = inputParams.getScaleIoData2SvmIpAddress();
-            if (StringUtils.isEmpty(scaleIoData2SvmIpAddress))
+            final String scaleIoData2EsxIpAddress = inputParams.getScaleIoData2EsxIpAddress();
+            if (StringUtils.isEmpty(scaleIoData2EsxIpAddress))
             {
                 throw new IllegalStateException("ScaleIO Data2 IP Address is null or empty");
             }
 
-            final String scaleIoSvmData2SubnetMask = inputParams.getScaleIoSvmData2SubnetMask();
-            if (StringUtils.isEmpty(scaleIoSvmData2SubnetMask))
+            final String scaleIoData1EsxSubnetMask = inputParams.getScaleIoData1EsxSubnetMask();
+            if (StringUtils.isEmpty(scaleIoData1EsxSubnetMask))
             {
-                throw new IllegalStateException("ScaleIO Data2 Subnet Mask is null or empty");
+                throw new IllegalStateException("ScaleIO Data1 ESXi Subnet Mask is null or empty");
+            }
+
+            final String scaleIoData2EsxSubnetMask = inputParams.getScaleIoData2EsxSubnetMask();
+            if (StringUtils.isEmpty(scaleIoData2EsxSubnetMask))
+            {
+                throw new IllegalStateException("ScaleIO Data2 ESXi Subnet Mask is null or empty");
             }
 
             final Map<String, String> dvSwitchNames = repository.getDvSwitchNames();
@@ -213,8 +213,8 @@ public class AddHostToDvSwitchTaskHandler extends BaseTaskHandler implements IWo
             //DV Switch 1 - SIO Data1
             final DvSwitchConfigList dvSwitchConfig1 = new DvSwitchConfigList();
             final List<PortGroupConfigList> portGroupConfigListDvSwitch1 = new ArrayList<>();
-            portGroupConfigListDvSwitch1.add(new PortGroupConfigList(dvPortGroupNames.get(DVPORT_GROUP_SIO_DATA1), scaleIoData1SvmIpAddress, null,
-                    scaleIoSvmData1SubnetMask));
+            portGroupConfigListDvSwitch1.add(new PortGroupConfigList(dvPortGroupNames.get(DVPORT_GROUP_SIO_DATA1), scaleIoData1EsxIpAddress, null,
+                    scaleIoData1EsxSubnetMask));
 
             dvSwitchConfig1.setPortGroupConfigList(portGroupConfigListDvSwitch1);
             dvSwitchConfig1.setSwitchName(dvSwitchNames.get(DVSWITCH1_NAME));
@@ -224,8 +224,8 @@ public class AddHostToDvSwitchTaskHandler extends BaseTaskHandler implements IWo
             //DV Switch 2 - SIO Data2
             final DvSwitchConfigList dvSwitchConfig2 = new DvSwitchConfigList();
             final List<PortGroupConfigList> portGroupConfigListDvSwitch2 = new ArrayList<>();
-            portGroupConfigListDvSwitch2.add(new PortGroupConfigList(dvPortGroupNames.get(DVPORT_GROUP_SIO_DATA2), scaleIoData2SvmIpAddress, null,
-                    scaleIoSvmData2SubnetMask));
+            portGroupConfigListDvSwitch2.add(new PortGroupConfigList(dvPortGroupNames.get(DVPORT_GROUP_SIO_DATA2), scaleIoData2EsxIpAddress, null,
+                    scaleIoData2EsxSubnetMask));
 
             dvSwitchConfig2.setPortGroupConfigList(portGroupConfigListDvSwitch2);
             dvSwitchConfig2.setSwitchName(dvSwitchNames.get(DVSWITCH2_NAME));

@@ -82,7 +82,7 @@ public class NodeExpansionWebApplicationTest
         request.setIdracIpAddress("4.4.4.4");
         request.setIdracSubnetMask("5.55.5.5");
         request.setEsxiManagementSubnetMask("6.66.6.6");
-        request.setScaleIoSvmData1SubnetMask("7.7.7.7");
+        request.setScaleIoData1SvmSubnetMask("7.7.7.7");
         request.setScaleIoData1SvmIpAddress("9.99.9.9");
         request.setSymphonyUuid(UUID.randomUUID().toString());
 
@@ -109,8 +109,8 @@ public class NodeExpansionWebApplicationTest
         params.setEsxiManagementSubnetMask("1.1.1.1");
         assertNotNull(params.getEsxiManagementSubnetMask());
 
-        params.setScaleIoSvmData1SubnetMask("1.1.1.1");
-        assertNotNull(params.getScaleIoSvmData1SubnetMask());
+        params.setScaleIoData1SvmSubnetMask("1.1.1.1");
+        assertNotNull(params.getScaleIoData1SvmSubnetMask());
 
         params.setScaleIoData1SvmIpAddress("1.1.1.1");
         assertNotNull(params.getScaleIoData1SvmIpAddress());

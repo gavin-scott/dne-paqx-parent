@@ -1,6 +1,7 @@
 /**
  * <p>
- * Copyright &copy; 2017 Dell Inc. or its subsidiaries. All Rights Reserved. Dell EMC Confidential/Proprietary Information
+ * Copyright &copy; 2017 Dell Inc. or its subsidiaries. All Rights Reserved.
+ * Dell EMC Confidential/Proprietary Information
  * </p>
  */
 
@@ -37,10 +38,10 @@ import java.util.List;
 import static java.util.Collections.singletonList;
 
 /**
- * TODO: Document Usage
+ * Deploy ScaleIO VM Task Handler
  * <p>
- * <p>
- * Copyright &copy; 2017 Dell Inc. or its subsidiaries. All Rights Reserved. Dell EMC Confidential/Proprietary Information
+ * Copyright &copy; 2017 Dell Inc. or its subsidiaries. All Rights Reserved.
+ * Dell EMC Confidential/Proprietary Information
  * </p>
  *
  * @version 1.0
@@ -406,13 +407,6 @@ public class DeployScaleIoVmTaskHandler extends BaseTaskHandler implements IWork
                 throw new IllegalStateException("ScaleIO Data1 IP Address is null");
             }
 
-            final String scaleIoSvmData1SubnetMask = this.inputParams.getScaleIoSvmData1SubnetMask();
-
-            if (StringUtils.isEmpty(scaleIoSvmData1SubnetMask))
-            {
-                throw new IllegalStateException("ScaleIO VM Data1 Subnet Mask is null");
-            }
-
             final String scaleIoData2SvmIpAddress = this.inputParams.getScaleIoData2SvmIpAddress();
 
             if (StringUtils.isEmpty(scaleIoData2SvmIpAddress))
@@ -420,9 +414,16 @@ public class DeployScaleIoVmTaskHandler extends BaseTaskHandler implements IWork
                 throw new IllegalStateException("ScaleIO Data2 IP Address is null");
             }
 
-            final String scaleIoSvmData2SubnetMask = this.inputParams.getScaleIoSvmData2SubnetMask();
+            final String scaleIoData1SvmSubnetMask = this.inputParams.getScaleIoData1SvmSubnetMask();
 
-            if (StringUtils.isEmpty(scaleIoSvmData2SubnetMask))
+            if (StringUtils.isEmpty(scaleIoData1SvmSubnetMask))
+            {
+                throw new IllegalStateException("ScaleIO VM Data1 Subnet Mask is null");
+            }
+
+            final String scaleIoData2SvmSubnetMask = this.inputParams.getScaleIoData2SvmSubnetMask();
+
+            if (StringUtils.isEmpty(scaleIoData2SvmSubnetMask))
             {
                 throw new IllegalStateException("ScaleIO VM Data2 Subnet Mask is null");
             }
@@ -434,11 +435,11 @@ public class DeployScaleIoVmTaskHandler extends BaseTaskHandler implements IWork
 
             final NicSetting nicSettingScaleIoData1 = new NicSetting();
             nicSettingScaleIoData1.setIpAddress(scaleIoData1SvmIpAddress);
-            nicSettingScaleIoData1.setSubnetMask(scaleIoSvmData1SubnetMask);
+            nicSettingScaleIoData1.setSubnetMask(scaleIoData1SvmSubnetMask);
 
             final NicSetting nicSettingScaleIoData2 = new NicSetting();
             nicSettingScaleIoData2.setIpAddress(scaleIoData2SvmIpAddress);
-            nicSettingScaleIoData2.setSubnetMask(scaleIoSvmData2SubnetMask);
+            nicSettingScaleIoData2.setSubnetMask(scaleIoData2SvmSubnetMask);
 
             return Arrays.asList(nicSettingScaleIoMgmt, nicSettingScaleIoData1, nicSettingScaleIoData2);
         }
