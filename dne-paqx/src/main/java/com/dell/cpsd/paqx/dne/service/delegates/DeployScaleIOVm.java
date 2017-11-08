@@ -357,7 +357,7 @@ public class DeployScaleIOVm extends BaseWorkflowDelegate
                 throw new IllegalStateException("ScaleIO Data1 IP Address is null");
             }
 
-            final String scaleIoSvmData1SubnetMask = this.inputParams.getScaleIoSvmData1SubnetMask();
+            final String scaleIoSvmData1SubnetMask = this.inputParams.getScaleIoData1SubnetMask();
 
             if (StringUtils.isEmpty(scaleIoSvmData1SubnetMask))
             {
@@ -371,7 +371,7 @@ public class DeployScaleIOVm extends BaseWorkflowDelegate
                 throw new IllegalStateException("ScaleIO Data2 IP Address is null");
             }
 
-            final String scaleIoSvmData2SubnetMask = this.inputParams.getScaleIoSvmData2SubnetMask();
+            final String scaleIoSvmData2SubnetMask = this.inputParams.getScaleIoData2SubnetMask();
 
             if (StringUtils.isEmpty(scaleIoSvmData2SubnetMask))
             {

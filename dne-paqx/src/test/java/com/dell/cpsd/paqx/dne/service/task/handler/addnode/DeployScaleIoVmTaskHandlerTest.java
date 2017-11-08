@@ -137,9 +137,9 @@ public class DeployScaleIoVmTaskHandlerTest
         doReturn(this.sioMgmtSubnetMask).when(this.request).getScaleIoSvmManagementSubnetMask();
         doReturn(this.scaleIOSVMManagementGatewayAddress).when(this.request).getScaleIoSvmManagementGatewayAddress();
         doReturn(this.sioData1IpAddress).when(this.request).getScaleIoData1SvmIpAddress();
-        doReturn(this.sioData1SubnetMask).when(this.request).getScaleIoSvmData1SubnetMask();
+        doReturn(this.sioData1SubnetMask).when(this.request).getScaleIoData1SubnetMask();
         doReturn(this.sioData2IpAddress).when(this.request).getScaleIoData2SvmIpAddress();
-        doReturn(this.sioData2SubnetMask).when(this.request).getScaleIoSvmData2SubnetMask();
+        doReturn(this.sioData2SubnetMask).when(this.request).getScaleIoData2SubnetMask();
 
         doReturn(true).when(this.service).requestDeployScaleIoVm(any());
 
@@ -471,9 +471,9 @@ public class DeployScaleIoVmTaskHandlerTest
         doReturn(this.esxiManagementGatewayIpAddress).when(this.request).getEsxiManagementGatewayIpAddress();
         doReturn(this.sioMgmtSubnetMask).when(this.request).getScaleIoSvmManagementSubnetMask();
         doReturn(this.sioData1IpAddress).when(this.request).getScaleIoData1SvmIpAddress();
-        doReturn(this.sioData1SubnetMask).when(this.request).getScaleIoSvmData1SubnetMask();
+        doReturn(this.sioData1SubnetMask).when(this.request).getScaleIoData1SubnetMask();
         doReturn(this.sioData2IpAddress).when(this.request).getScaleIoData2SvmIpAddress();
-        doReturn(this.sioData2SubnetMask).when(this.request).getScaleIoSvmData2SubnetMask();
+        doReturn(this.sioData2SubnetMask).when(this.request).getScaleIoData2SubnetMask();
         doReturn(false).when(this.service).requestDeployScaleIoVm(any());
 
         boolean result = this.handler.executeTask(this.job);

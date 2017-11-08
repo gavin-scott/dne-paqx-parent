@@ -115,7 +115,7 @@ public class AddHostToDvSwitchTaskHandler extends BaseTaskHandler implements IWo
                 throw new IllegalStateException("ScaleIO Data1 IP Address is null or empty");
             }
 
-            final String scaleIoSvmData1SubnetMask = inputParams.getScaleIoSvmData1SubnetMask();
+            final String scaleIoSvmData1SubnetMask = inputParams.getScaleIoData1SubnetMask();
             if (StringUtils.isEmpty(scaleIoSvmData1SubnetMask))
             {
                 throw new IllegalStateException("ScaleIO Data1 Subnet Mask is null or empty");
@@ -128,7 +128,7 @@ public class AddHostToDvSwitchTaskHandler extends BaseTaskHandler implements IWo
                 throw new IllegalStateException("ScaleIO Data2 IP Address is null or empty");
             }
 
-            final String scaleIoSvmData2SubnetMask = inputParams.getScaleIoSvmData2SubnetMask();
+            final String scaleIoSvmData2SubnetMask = inputParams.getScaleIoData2SubnetMask();
             if (StringUtils.isEmpty(scaleIoSvmData2SubnetMask))
             {
                 throw new IllegalStateException("ScaleIO Data2 Subnet Mask is null or empty");

@@ -63,9 +63,9 @@ public class AddHostToDvSwitch extends BaseWorkflowDelegate
         final String vMotionManagementIpAddress = nodeDetail.getvMotionManagementIpAddress();
         final String vMotionManagementSubnetMask = nodeDetail.getvMotionManagementSubnetMask();
         final String scaleIoData1SvmIpAddress = nodeDetail.getScaleIoData1SvmIpAddress();
-        final String scaleIoSvmData1SubnetMask = nodeDetail.getScaleIoSvmData1SubnetMask();
+        final String scaleIoSvmData1SubnetMask = nodeDetail.getScaleIoData1SubnetMask();
         final String scaleIoData2SvmIpAddress = nodeDetail.getScaleIoData2SvmIpAddress();
-        final String scaleIoSvmData2SubnetMask = nodeDetail.getScaleIoSvmData2SubnetMask();
+        final String scaleIoSvmData2SubnetMask = nodeDetail.getScaleIoData2SubnetMask();
 
         final Map<String, String> dvSwitchNames = repository.getDvSwitchNames();
         String[] switches = {DVSWITCH0_NAME, DVSWITCH1_NAME, DVSWITCH2_NAME};
