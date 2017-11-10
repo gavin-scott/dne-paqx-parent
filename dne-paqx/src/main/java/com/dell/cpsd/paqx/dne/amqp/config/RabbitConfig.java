@@ -115,20 +115,15 @@ public class RabbitConfig
 
     // following envs are for ESS communication. For now, ESS is internal service so no capability registration.
     // DNE gets exchanges, queue, routing key from properties file.
-    @Value("${ess.req.exchange.name}")
-    private String              essRequestExchange;
+    private String              essRequestExchange = "exchange.dell.cpsd.service.ess.request";
 
-    @Value("${ess.req.routing.prefix}")
-    private String              essReqRoutingKeyPrefix;
+    private String              essReqRoutingKeyPrefix = "ess.service.request";
 
-    @Value("${ess.res.exchange.name}")
-    private String              essResponseExchange;
+    private String              essResponseExchange = "exchange.dell.cpsd.service.ess.response";
 
-    @Value("${ess.res.queue}")
-    private String              essResQueue;
+    private String              essResQueue = "queue.dell.cpsd.ess.service.response";
 
-    @Value("${ess.res.routing.prefix}")
-    private String              essRespRoutingKeyPrefix;
+    private String              essRespRoutingKeyPrefix = "ess.service.response";
     /*
      * The RabbitMQ connection factory
      */

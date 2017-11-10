@@ -48,8 +48,7 @@ public class PreProcessService extends BaseService implements IPreProcessService
     @Autowired
     private DataServiceRepository repository;
 
-    @Value("${obm.services}")
-    private String[] obmServices;
+    private String[] obmServices = { "dell-wsman-obm-service", "ipmi-obm-service" };
 
     private static final int PING_IDRAC_TIMEOUT = 120000; // 120 seconds
 
