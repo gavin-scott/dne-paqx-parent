@@ -23,7 +23,7 @@
     </licenses>
     
     <properties>
-        <com.dell.cpsd.ess.version>1.0.0-SNAPSHOT</com.dell.cpsd.ess.version>
+        <com.dell.cpsd.ess.version>1.0.0-q3stable-SNAPSHOT</com.dell.cpsd.ess.version>
     </properties>
     
     <dependencies>
