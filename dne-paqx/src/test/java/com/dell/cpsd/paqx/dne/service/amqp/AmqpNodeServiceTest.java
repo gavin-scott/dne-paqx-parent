@@ -195,10 +195,13 @@ public class AmqpNodeServiceTest
 
     private List<com.dell.cpsd.DiscoveredNode> buildNodeList(String uuid)
     {
-        com.dell.cpsd.DiscoveredNode discoveredNode = new com.dell.cpsd.DiscoveredNode(uuid,
-                com.dell.cpsd.DiscoveredNode.AllocationStatus.DISCOVERED);
-        com.dell.cpsd.DiscoveredNode addedNode = new com.dell.cpsd.DiscoveredNode(UUID.randomUUID().toString(),
-                com.dell.cpsd.DiscoveredNode.AllocationStatus.ADDED);
+        com.dell.cpsd.DiscoveredNode discoveredNode = new com.dell.cpsd.DiscoveredNode();
+        discoveredNode.setConvergedUuid(uuid);
+        discoveredNode.setAllocationStatus(com.dell.cpsd.DiscoveredNode.AllocationStatus.DISCOVERED);
+
+        com.dell.cpsd.DiscoveredNode addedNode = new com.dell.cpsd.DiscoveredNode();
+        addedNode.setConvergedUuid(UUID.randomUUID().toString());
+        addedNode.setAllocationStatus(com.dell.cpsd.DiscoveredNode.AllocationStatus.ADDED);
 
         List<com.dell.cpsd.DiscoveredNode> nodeList = new ArrayList<>();
         nodeList.add(discoveredNode);
