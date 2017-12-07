@@ -126,7 +126,7 @@ public class PingIdracTaskHandlerTest
     @Test
     public void executeTask_ip_address_unreachable()
     {
-        String bogusIdracIpAddress = "1.0.0.0";
+        String bogusIdracIpAddress = "240.0.0.0";
 
         doReturn(this.response).when(this.handler).initializeResponse(this.job);
         doReturn(this.request).when(this.job).getInputParams();
