@@ -86,13 +86,15 @@ if [ $1 -eq 0 ];then
     echo "Removing Dell Inc. DNE PAQX components"
     echo "This will take a few minutes and several services will be restarted on the system. This is normal and please let the script run to completion"
 
-
     echo "Stopping Dell Inc. DNE PAQX components"
     /usr/bin/docker stop dell-cpsd-dne-node-expansion-service
     /usr/bin/docker rm --volumes dell-cpsd-dne-node-expansion-service
 
     echo "Deleting the DNE PAQX components for Dell Inc."
     /usr/bin/docker rmi $(docker images -q dell-cpsd-dne-node-expansion-service)
+
+    echo "Unregistering node-expansion-service from Consul"
+    curl --insecure --request PUT https://localhost:8500/v1/agent/service/deregister/node-expansion-service
 
     echo "Dell Inc. DNE PAQX components removal has completed successfully"
 fi
