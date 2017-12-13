@@ -96,6 +96,10 @@ if [ $1 -eq 0 ];then
     echo "Unregistering node-expansion-service from Consul"
     curl --insecure --request PUT https://localhost:8500/v1/agent/service/deregister/node-expansion-service
 
+    echo "Unregistering node-discovery-service from Consul"
+    SERVICE_ID=$(docker exec consul sh -c "curl -sk https://consul.cpsd.dell:8500/v1/agent/services | jq -r 'to_entries[] | select(.value.Service == \"node-expansion-service\").value.ID'")
+    docker exec consul sh -c "curl -sk -X PUT https://consul.cpsd.dell:8500/v1/agent/service/deregister/${SERVICE_ID}"
+
     echo "Dell Inc. DNE PAQX components removal has completed successfully"
 fi
 exit 0
